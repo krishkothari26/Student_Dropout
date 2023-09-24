@@ -1,3 +1,4 @@
+import 'package:dropout/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -14,17 +15,27 @@ class MyApp extends StatelessWidget {
       title: 'Student Dropout',
       home: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.amber,
+          // backgroundColor: Color.fromARGB(255, 252, 175, 28),
+          backgroundColor: Colors.black87,
           title: const Text(
             'Student Dropout',
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
+              // color: Colors.black,
+              fontSize: 23,
             ),
           ),
         ),
-
+        body: Container(
+          child: LoginScreen(),
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              fit: BoxFit.fill,
+              image: AssetImage('assets/images/dropout_background.jpg'),
+            ),
+          ),
+        ),
       ),
     );
-
   }
 }
