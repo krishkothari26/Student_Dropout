@@ -1,3 +1,5 @@
+import 'package:dropout/screens/details_gov.dart';
+import 'package:dropout/screens/details_school.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -44,13 +46,26 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Colors.black87,
         items: [
           BottomNavigationBarItem(
-            icon: Icon(Icons.home, color: Colors.white),
+            icon: IconButton(
+              icon: Icon(
+                Icons.home,
+                color: Colors.white,
+              ),
+              onPressed: () {},
+            ),
             label: 'Home',
             backgroundColor: Colors.white,
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.library_books,
+            icon: IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => DetailsSchool(),
+                  ),
+                );
+              },
+              icon: Icon(Icons.library_books),
               color: Colors.white,
             ),
             label: 'Details',
